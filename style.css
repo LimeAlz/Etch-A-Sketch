@@ -4,6 +4,7 @@
     height: 400px;
     width: 400px;
     border: 5px solid black;
+    cursor: url(./image/Paint_Brush.cur),auto;
     
 }
 

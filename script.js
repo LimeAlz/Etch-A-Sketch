@@ -84,7 +84,7 @@ body.appendChild(btn_div);
 
 const color_div = document.createElement('div');
 color_div.classList.add('color_div');
-let cr = ["red","orange","yellow","blue","green","pink","purple","black"];
+let cr = ["red","orange","yellow","blue","green","pink","white","black"];
 for(let i=0;i< cr.length;i++){
     let temp = document.createElement("div");
     temp.style.padding = "12px";
@@ -106,7 +106,7 @@ document.querySelector('#yellow-color').addEventListener('click',()=>chageColor(
 document.querySelector('#blue-color').addEventListener('click',()=>chageColor('blue'));
 document.querySelector('#green-color').addEventListener('click',()=>chageColor('green'));
 document.querySelector('#pink-color').addEventListener('click',()=>chageColor('pink'));
-document.querySelector('#purple-color').addEventListener('click',()=>chageColor('purple'));
+document.querySelector('#white-color').addEventListener('click',()=>chageColor('white'));
 document.querySelector('#black-color').addEventListener('click',()=>chageColor('black'));
 
 
