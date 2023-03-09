@@ -49,8 +49,11 @@ function dkmod(){
     document.querySelector('.board').style.borderColor = "darkgrey";
     let btn_border =document.querySelectorAll('.bo');
     for (let i = 0; i< btn_border.length; i++){
-        btn_border[i].style.borderColor = "darkgrey";
+        btn_border[i].style.borderColor = "grey";
+        btn_border[i].style.color = "black";
     }
+    document.querySelector('.color').style.borderColor = "grey";
+    document.querySelector('.color').style.color = "black";
 }
 function limod(){
     document.body.style.backgroundColor = "white";
@@ -60,6 +63,8 @@ function limod(){
     for (let i = 0; i< btn_border.length; i++){
         btn_border[i].style.borderColor = "black";
     }
+    document.querySelector('.color').style.borderColor = "black";
+    document.querySelector('.color').style.color = "black";
 }
 const btn_div =  document.createElement('div');
 
@@ -82,6 +87,8 @@ btn_div.appendChild(limode);
 body.appendChild(btn_div);
 
 
+
+
 const color_div = document.createElement('div');
 color_div.classList.add('color_div');
 let cr = ["red","orange","yellow","blue","green","pink","white","black"];
@@ -90,11 +97,12 @@ for(let i=0;i< cr.length;i++){
     temp.style.padding = "12px";
     let temp2 = document.createElement("div");
     temp2.id = cr[i]+"-color";
-    temp2.style.cssText = `background-color:${cr[i]}; height:20px; width:20px;border:2px solid darkgrey;`
+    temp2.style.cssText = `background-color:${cr[i]}; height:20px; width:20px; border:2px solid black;  border-radius: 15px;`
     temp.appendChild(temp2);
     color_div.appendChild(temp); 
 }
-body.appendChild(color_div);
+const color_box  = document.querySelector('.color')
+color_box.appendChild(color_div);
 
 function chageColor(c){
     color = c;
