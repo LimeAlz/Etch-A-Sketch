@@ -1,62 +1,154 @@
 *{
-    font-family: 'Lucida Handwriting', cursive, sans-serif;
+    font-family: 'Courier New', monospace;
+}
+body{
+    background-color:#FFF0d4;
+    color: black;
 }
 
-.board{
-    display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-    height: 400px;
-    width: 400px;
-    border: 5px solid black;
-    cursor: url(./image/Paint_Brush.cur),auto;
-    
+.dklabel{
+    width: 95px;
+    height: 45px;
+    position: relative;
+    display: block;
+    background-color: #ebebeb;
+    border-radius: 20px;
+    box-shadow: inset 0px 5px 15px rgba(0,0,0,0.4), inset 0px -5px 15px rgba(255,255,255,0.4);
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-.color_div{
-    display: grid;
-    grid-template-columns: auto auto;
-    /* background-color: grey; */
-}
-*{
-    padding: 0%;
+.dklabel:after{
+    content: "";
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 2.5px;
+    left: 5px;
+    background: linear-gradient(180deg,#ffcc89,#d8860b);
+    border-radius:40px ;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+
 }
 
-.board-item{
+.dkinput{
+    width:0;
+    height:0;
+    visibility: hidden;
+}
+
+.dkinput:checked +.dklabel{
+    background-color: #242424;
+}
+
+.dkinput:checked + .dklabel:after{
+    left:90px;
+    transform: translateX(-100%) ;
+    background:linear-gradient(180deg,#777,#3a3a3a) ;
+}
+
+
+body.dark-theme {
+    color: #f2eaea;
+    background:#424549;
+  } 
+
+.bt{
+    height: 75px;
+    width:150px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
     background-color: white;
-}
-
-.header{
-    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Lucida Handwriting', cursive, sans-serif;
-    font-size: 36px;
-    margin-bottom: 25px;
-}
-.bo{
-    border: 2px solid black;
-    padding: 15px 10px 15px 10px;
-    background-color: rgb(205, 203, 203);
-    font-size: 24px;
-    border-radius: 12px;
-    /* text-align: center;
-    align-self: center; */
+    font-size: 25px;
+
 }
 
-.body{
+.bt.dark-theme{
+    background-color:  #ebebeb;
+    color: #242424;
+    border-color: #ebebeb;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.title{
+    font-size: 40px;
+    text-align: center;
+    margin: 0;
+}
+.dm {
+    display: flex;
+    align-items: center;
+  }
+
+.Content{
     display: flex;
     justify-content: space-around;
 }
+.board{
+    border:solid 5px black;
+    display: grid;
+    /* padding: 10px; */
+    height:600px;
+    width:600px;
+    /* grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto; */
+}
+
+.grid-item{
+background-color: white;
+}
 
 .color{
+    height: 500px;
+    width: 300px;
     display: flex;
-    flex-direction:column;
-    justify-content:flex-start;
-    gap: 30px;
-    padding: 15px 15px 15px 15px;
-    background-color: rgb(205, 203, 203);
-    border: 5px solid black;
-    font-size: 24px;
-    border-radius: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap:50px;
 }
+
+#clwheel{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 75px;
+    width: 150px;
+    border: none;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+#clwheel::-webkit-color-swatch{
+    border-radius: 15px;
+    border: none;
+}
+
+#clwheel::-moz-color-swatch{
+    border-radius: 15px;
+    border: none;
+}
+
+.setting{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap:50px;
+    align-items: center;
+}
+
+
+
+
